@@ -881,6 +881,12 @@ namespace Dz16
             //{
             //    Console.WriteLine(location);
             //}
+
+            foreach (var employee in employees)
+            {
+                Console.WriteLine(employee);
+                Console.WriteLine();
+            }
         }
     }
 }
