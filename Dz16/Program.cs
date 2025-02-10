@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Dz16
 {
@@ -694,199 +695,83 @@ namespace Dz16
                 PhoneNumber = "555-012-3456",
                 HireDate = new DateTime(2020, 7, 1),
                 JobId = job10.JobId,
-                Salary = 48000,
+                Salary = 8500,
                 CommissionPct = 0.07,
                 ManagerId = 7, // Указываем ID менеджера (employee7)
                 DepartmentId = department10.DepartmentId
             };
             employees.Add(employee10);
 
-            //1
-            //double max = 0;
+            //a
             //foreach (var employee in employees)
-            //{
-            //    if (max < employee.Salary)
-            //    {
-            //        max = employee.Salary;
-            //    }
-            //}
-            //Console.WriteLine(max);
-
-            //2
-            //var sortedBySalary = employees.OrderBy(e => e.Salary);
-            //foreach (var employee in sortedBySalary)
-            //{
-            //    Console.WriteLine(employee);
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine();
-            //Console.WriteLine();
-            //var sortedByLastName = employees.OrderBy(e => e.LastName);
-            //foreach (var employee in sortedByLastName)
             //{
             //    Console.WriteLine(employee);
             //    Console.WriteLine();
             //}
 
-            //3
-            //Dictionary<string, int> Departments = new Dictionary<string, int>();
-            //foreach(var department in departments)
+            //b
+            //var result = employees.Where(g => g.LastName == "Young");
+            //foreach (var employee in result)
             //{
-            //    Departments[department.DepartmentName] = 0;
-            //}
-            //int i = 0;
-            //foreach (var employee in employees)
-            //{
-            //    if (departments[i].DepartmentId == employee.getDepartmentId())
-            //    {
-            //        Departments[departments[i].DepartmentName]+=1;
-            //    }
-            //    i++;
-            //}
-            //foreach(var department in Departments)
-            //{
-            //    Console.WriteLine(department);
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
             //}
 
-            //4
-            //Dictionary<string, int> Departments = new Dictionary<string, int>();
-            //foreach (var department in departments)
+            //c
+            //var result = employees.Where(g => g.JobId == "Technician");
+            //foreach (var employee in result)
             //{
-            //    Departments[department.DepartmentName] = 0;
-            //}
-            //int i = 0;
-            //foreach (var employee in employees)
-            //{
-            //    if (departments[i].DepartmentId == employee.getDepartmentId())
-            //    {
-            //        Departments[departments[i].DepartmentName] += 1;
-            //    }
-            //    i++;
-            //}
-            //foreach (var department in Departments)
-            //{
-            //    if (department.Value == 0)
-            //    {
-            //        Console.WriteLine(department);
-            //    }
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
             //}
 
-            //5
-            //Dictionary<string, int> Locations = new Dictionary<string, int>();
-            //foreach (var location in locations)
+            //d
+            //var result = employees.Where(g => g.DepartmentId == 10 && g.Salary > 4000);
+            //foreach (var employee in result)
             //{
-            //    Locations[location.City] = 0;
-            //}
-            //int i = 0;
-            //foreach (var department in departments)
-            //{
-            //    if (department.DepartmentId == locations[i].LocationId)
-            //    {
-            //        Locations[locations[i].City] += 1;
-            //    }
-            //    i++;
-            //}
-            //foreach (var location in Locations)
-            //{
-            //    Console.WriteLine(location);
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
             //}
 
-            //6
-            //Dictionary<string, int> Locations = new Dictionary<string, int>();
-            //foreach (var location in locations)
+            //e
+            //var result = employees.Where(g => g.DepartmentId == 10 || g.DepartmentId == 9);
+            //foreach (var employee in result)
             //{
-            //    Locations[location.City] = 0;
-            //}
-            //int i = 0;
-            //foreach (var department in departments)
-            //{
-            //    if (department.DepartmentId == locations[i].LocationId)
-            //    {
-            //        Locations[locations[i].City] += 1;
-            //    }
-            //    i++;
-            //}
-            //foreach (var location in Locations)
-            //{
-            //    if (location.Value == 0)
-            //    {
-            //        Console.WriteLine(location);
-            //    }
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
             //}
 
-            //7
-            //Dictionary<string, int> Locations = new Dictionary<string, int>();
-            //foreach (var location in locations)
+            //f
+            //var result = employees.Where(g => g.LastName[g.LastName.Length-1] == 'g');
+            //foreach (var employee in result)
             //{
-            //    Locations[location.City] = 0;
-            //}
-            //int i = 0;
-            //foreach (var department in departments)
-            //{
-            //    if (department.DepartmentId == locations[i].LocationId)
-            //    {
-            //        Locations[locations[i].City] += 1;
-            //    }
-            //    i++;
-            //}
-            //foreach (var location in Locations)
-            //{
-            //    if(location.Value == 1)
-            //    {
-            //        Console.WriteLine(location);
-            //    }
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
             //}
 
-            //8
-            //double avg = 0;
-            //int size = 0;
-            //foreach (var employee in employees)
+            //g
+            //var result = employees.Where(g => (g.DepartmentId == 10 || g.DepartmentId == 9) && g.CommissionPct>0.07);
+            //foreach (var employee in result)
             //{
-            //    size++;
-            //    avg += employee.Salary;
-            //}
-            //Console.WriteLine($"Avg: {avg/size}");
-
-            //9
-            //double max = 0;
-            //Employee employeeMaxS = new Employee();
-            //foreach (var employee in employees)
-            //{
-            //    if (max < employee.Salary)
-            //    {
-            //        max = employee.Salary;
-            //        employeeMaxS = employee;
-            //    }
-            //}
-            //Console.WriteLine("Max Salary");
-            //Console.WriteLine(employeeMaxS);
-
-            //10
-            //Dictionary<string, int> Locations = new Dictionary<string, int>();
-            //foreach (var location in locations)
-            //{
-            //    Locations[location.City] = 0;
-            //}
-            //int i = 0;
-            //foreach (var department in departments)
-            //{
-            //    if (department.DepartmentId == locations[i].LocationId)
-            //    {
-            //        Locations[locations[i].City] += 1;
-            //    }
-            //    i++;
-            //}
-            //foreach (var location in Locations)
-            //{
-            //    Console.WriteLine(location);
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
             //}
 
-            foreach (var employee in employees)
-            {
-                Console.WriteLine(employee);
-                Console.WriteLine();
-            }
+            //h
+            //var result = employees.Where(g => g.LastName.Count(c => c == 'n') >=2);
+            //foreach (var employee in result)
+            //{
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
+            //}
+
+            //i
+            //var result = employees.Where(g => g.Salary>8000 && g.Salary<=9000);
+            //foreach (var employee in result)
+            //{
+            //    Console.WriteLine(employee);
+            //    Console.WriteLine();
+            //}
         }
     }
 }
